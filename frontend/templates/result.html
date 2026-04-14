@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h2>Analysis Result</h2>
+
+    <h3>Skills:</h3>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Score Graph:</h3>
+<img src="{{ url_for('static', filename='graph.png') }}" width="300">
+
+    <h3>Match Score:</h3>
+    <p>{{ score }}%</p>
+
+    <a href="/">Go Back</a>
+    <h2>Register</h2>
+<form method="post">
+    <input name="username" placeholder="Username" required><br><br>
+    <input name="password" type="password" placeholder="Password" required><br><br>
+    <button type="submit">Register</button>
+</form>
+<a href="/login">Login</a>
+<a href="/download">Download Report</a>
+
+</body>
+</html>
